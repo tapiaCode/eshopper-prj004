@@ -98,3 +98,26 @@
     button.parent().parent().find("input").val(newVal);
   });
 })(jQuery);
+
+let contador = 0;
+
+function agregarAlCarrito(event) {
+  event.preventDefault();
+  contador++;
+
+  // Actualizar el badge del carrito
+  const badge = document.querySelector("#carrito .badge-cart");
+  badge.textContent = contador;
+
+  // Scroll hacia el carrito
+  document.querySelector("#carrito").scrollIntoView({ behavior: "smooth" });
+
+  // Aplicar el efecto de resaltado
+  const carrito = document.getElementById("carrito");
+  carrito.classList.add("highlight");
+
+  // Remover la clase de resaltado después de la animación
+  setTimeout(() => {
+    carrito.classList.remove("highlight");
+  }, 600);
+}

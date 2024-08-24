@@ -9984,3 +9984,17 @@ a.text-dark:focus {
     transform: translateY(-15px);
   }
 }
+
+.highlight {
+  animation: highlight 0.6s ease-in-out;
+}
+
+@keyframes highlight {
+  0% {
+    background-color: yellow;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
